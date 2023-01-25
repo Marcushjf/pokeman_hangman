@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    <title>Hangman</title>
+
+    <script src = "../scripts/hangman.js"></script>
+    <script>
+        
+
+        document.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13 && document.getElementById("randword").textContent == 'Click "New word" or press Enter to Generate a Word') {
+                document.getElementById("newwordkey").click();
+            }
+            else if(event.keyCode === 13 && !(document.getElementById("randword").textContent == 'Click "New word" or press Enter to Generate a Word')){
+                document.getElementById("enterkey").click();
+            }
+        });
+        
+        
+    </script>
+</head>
+<body id="body">
+    <div class="selectiondiv">
+        <div>
+            <img id="titlepic"src="../pics/title.png" alt="Pic cannot load walao">
+        </div>
+        <div>
+            <i id="selection">Select generation (One or more box/boxes)</i>
+            <div class="genselect">
+                <button onclick="btncolor('gen1')" id="gen1">Kanto</button>
+                <button onclick="btncolor('gen2')" id="gen2">Johto</button>
+                <button onclick="btncolor('gen3')" id="gen3">Hoenn</button>
+            </div>
+        </div>
+    </div>
+    <div class = "maindiv">
+        <div>
+            <p id = "randword">Click "New word" or press Enter to Generate a Word</p>
+        </div>
+       
+        <div class ="inputblock">
+                <input type="text" id = "user_guess" placeholder="Input a letter">
+                <button onclick ="enterguess()" id = "enterkey"> Enter</button>
+        </div>
+        
+        <button onclick="randword()" id="newwordkey">
+            New word
+        </button>
+    </div>
+    <div class="btmdiv">
+        <div class="hintblock">
+            <p>Type:  </p><p id="hint"></p>
+        </div>
+        <div class="legend">
+            <p id="errormsg"></p>
+            <div class="notrieslabel"><i>No. of tries: </i><i id="notries">-</i></div>
+            <div class="scoreslabel"><i>Score: </i><i id = "noguesses">-</i></div>
+            <i id = "history">Letters tried: </i>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

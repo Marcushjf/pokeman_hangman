@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script>
+        let username = "mhjf";
+        let password = "fengjianho";
+        function login(){
+            let username_ui = document.getElementById("user");
+            let pw_ui = document.getElementById("pw");
+            if (username == username_ui.value && pw_ui.value == password){
+                document.location = 'tempmain.html';
+            }
+            else{
+                window.alert("Invalid username or password");
+                username_ui.value = "";
+                pw_ui.value = "";
+            }
+        }
+
+        document.addEventListener("keyup", function(event){
+            if(event.keyCode === 13){
+                document.getElementById("loginbtn").click();
+            }
+        })
+    </script>
+
+</head>
+<body>
+    <h1>Are u me?</h1>
+    <i>username</i>
+    <input type = "text" id = "user"><br>
+    <i>password</i>
+    <input type = "password" id = "pw"><br>
+    <button onclick="login()" id="loginbtn">login</button>
+
+</body>
+</html>
