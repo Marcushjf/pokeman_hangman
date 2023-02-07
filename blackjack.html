@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="blackjack.css">
+    <link rel="stylesheet" href="../pokeman_hangman/public/css/blackjack.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack</title>
+    <title>Blackjack proj</title>
 
-    <script src = "../scripts/blackjack.js"></script>
+    <script src = "../pokeman_hangman/public/scripts/blackjack.js"></script>
 
 </head>
 <body>
-    <button onclick="start()">Start</button>
+    <p id="buyin">Buy in amount</p>
+    <button onclick="buyin(100)"id="100">100</button> <button onclick="buyin(500)" id="500">500</button> <button onclick="buyin(1000)" id="1000">1000</button><br>
+    <input type="text" id="betamount" placeholder="Bet">
+    <button onclick="start()" id="startbtn">Deal</button>
     <div class="dealerdiv">
         <p id="dealerhand">dealer</p>
-        <i>Score :</i><i id="dealerscore"> ~</i>
+        <i>Score :</i><i id="dealerscore"> ~</i><i>  Points: </i><i id="dealerpoints">1000</i>
     </div>
     <div class="playerdiv">
         <p id="playerhand">player</p>
-        <i>Score :</i><i id="playerscore"> ~</i>
+        <i>Score :</i><i id="playerscore"> ~</i><i>  Points: </i><i id="playerpoints">500</i>
     </div>
-    <button >Hit</button>
-    <p id="winner"></p>
-
+    <button onclick="hit()">Hit</button><button onclick="bothit()" id="staybtn">Stand</button>
+    <p id="winner">~</p>
 </body>
 </html>
